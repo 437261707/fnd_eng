@@ -1,0 +1,65 @@
+<div class="plat">
+    <h3>Contact<span>us</span></h3>
+    <div class="width1000 plat_txt">
+        <div class="plat_left">
+            <img src="Public/images/ad.png" />
+            <p>31st Floor,Everbright Bank Building, Zhuzilin,Futian District,Shenzhen  </p>
+        </div>
+        <div class="plat_left">
+            <img src="Public/images/phone.png" />
+            <p>+86-400-678-9696</p>
+            <p class="p1">5 days a week from 9:00 am to 6:00 pm</p>
+        </div>
+        <div class="plat_left plat_left2">
+            <img src="Public/images/a.png" />
+            <p>yangjian@urifund.com</p>
+        </div>
+    </div>
+</div>
+<div class="fixed_ban">
+    <ul>
+        <li><a href="http://www.fndtech.org/">中文版</a></li>
+    </ul>
+</div>
+</body>
+<script>
+    $(function(){
+        $(".top_two ul li").click(function(){
+            $(this).addClass("active").siblings().removeClass("active")
+        })
+        $(".arrTxt").css("right",($(window).width() - $(".width1000").width())/2)
+
+        $(window).resize(function(){
+            $(".arrTxt").css("right",($(window).width() - $(".width1000").width())/2)
+        })
+        //手动点击变化
+        $(".arrTxt li").click(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+            var index = $(this).index();
+            i = index;
+            $(".arrImg li").eq(index).fadeIn().siblings().fadeOut();
+        })
+
+        //自动播放
+        var i = 0;
+        var aLi = $(".arrTxt li").length
+        time = setInterval(mive,3000)
+        function mive(){
+            i++
+            if(i == aLi )
+            {
+                i = 0;
+            }
+            $(".arrTxt li").eq(i).addClass("active").siblings().removeClass("active");
+            $(".arrImg li").eq(i).fadeIn().siblings().fadeOut();
+        }
+
+        //定时器的控制
+        $(".bannner").hover(function(){
+            clearInterval(time)
+        },function(){
+            time = setInterval(mive,3000)
+        })
+    })
+</script>
+</html>

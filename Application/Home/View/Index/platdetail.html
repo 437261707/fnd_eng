@@ -1,0 +1,24 @@
+<include file="Public/header.html"  />
+<div class="top">
+    <div class="width1000 top_two">
+        <ul>
+            <li><a href="{:U('Index/index')}">HOME</a></li>
+            <li><a href="{:U('Index/product')}">PRODUCTS</a></li>
+            <li><a href="{:U('Index/water')}">WATER&HEALTH</a></li>
+            <li class="active"><a href="{:U('Index/plat')}">PUBLIC</a></li>
+            <li><a href="{:U('Index/health')}">CONTACTS</a></li>
+            <li><a href="http://shop.fndtech.org">SHOP</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="bfore">
+    <div class="bfore_t">
+        <h3>{$model.title}</h3>
+        <p>{$model.time|date="Y/m/d H:i:s",###}</p>
+    </div>
+    <div class="content">
+        {$model.content|htmlspecialchars_decode}
+    </div>
+</div>
+<include file="Public/footer.html"/>

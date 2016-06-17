@@ -1,0 +1,48 @@
+<include file="Public/header.html"  />
+<div class="top">
+    <div class="width1000 top_two">
+        <ul>
+            <li><a href="{:U('Index/index')}">HOME</a></li>
+            <li><a href="{:U('Index/product')}">PRODUCTS</a></li>
+            <li><a href="{:U('Index/water')}">WATER&HEALTH</a></li>
+            <li class="active"><a href="{:U('Index/plat')}">PUBLIC</a></li>
+            <li><a href="{:U('Index/health')}">CONTACTS</a></li>
+            <li><a href="http://shop.fndtech.org">SHOP</a></li>
+        </ul>
+    </div>
+</div>
+<!-- 轮播图 -->
+<div class="bannner">
+    <ul class="arrImg">
+        <li class="on1">
+            <div class="banner_bottom"><p>Everbright Bank Building, Zhuzilin,Futian District,Shenzhen 1</p></div>
+        </li>
+        <li class="on2">
+            <div class="banner_bottom"><p>Everbright Bank Building, Zhuzilin,Futian District,Shenzhen 2</p></div>
+        </li>
+        <li class="on3">
+            <div class="banner_bottom"><p>First Appearance of Funengda Air Water Generator at Shenzhen International Low-carbon City Forum3</p></div>
+        </li>
+    </ul>
+    <ul class="arrTxt">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<!-- 轮播图 -->
+<foreach name="model" item="v">
+    <div class="width1000 sunshine">
+        <div class="sunshine_img"><a href="{:U('Index/platdetail?id=')}{$v.id}"><img src="Public/uploads/{$v.image}"></a></div>
+        <div class="sunshine_list">
+            <h3><a href="{:U('Index/platdetail?id=')}{$v.id}">{$v.title}</a></h3>
+            <i>{$v.time|date="Y/m/d",###}</i>
+            <p>{$v.abstract}</p>
+        </div>
+    </div>
+</foreach>
+
+<div class="clearfix"></div>
+{$page}
+<include file="Application/Admin/View/Public/static/css"/>
+<include file="Public/footer.html"/>

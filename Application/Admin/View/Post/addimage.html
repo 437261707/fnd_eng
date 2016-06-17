@@ -1,0 +1,11 @@
+<include file="Public/header" title="添加文章" />
+<div id="page-wrapper">
+    <form method="post" enctype="multipart/form-data" action="{:U('post/image?id=')}{$id}">
+        <div class="form-group">
+            <label>上传封面图片</label>
+            <input name="image" type="file" value="" />
+        </div>
+        <button type="submit" class="btn btn-default">提交</button>
+    </form>
+
+<include file="Public/footer" />
